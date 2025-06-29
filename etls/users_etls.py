@@ -5,6 +5,8 @@ import sys
 import pandas as pd 
 from utils.constanst import TOKEN
 
+#ETL of users
+
 TODAY = pd.Timestamp.now().strftime("%Y-%m-%d")
 
 

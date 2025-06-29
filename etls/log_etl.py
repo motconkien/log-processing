@@ -4,6 +4,8 @@ import os
 import sys 
 import pandas as pd 
 
+#LOG etls
+
 last_event_id = None 
 
 def connect_API(API_URL, headers):

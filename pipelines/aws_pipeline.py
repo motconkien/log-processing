@@ -19,4 +19,4 @@ def aws_pipeline(ti):
     if user_file:
         load_to_s3(s3, user_file, s3_key_user)
     else:
-        print("[INFO] No new user file to upload.")
+        print("[INFO] No new user file to upload")

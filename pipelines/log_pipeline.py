@@ -4,7 +4,7 @@ import os
 
 def log_pipeline(filename):
     """
-    fetch data from API -> extract -> transform -> load
+    fetch data from API -> extract -> transform -> load.
     """
     file_path = f"{OUTPUT_LOGS}/{filename}.csv"
     print(file_path)
@@ -14,6 +14,6 @@ def log_pipeline(filename):
     load_file(df,file_path)
 
 
-    print(df)
+    # print(df)
 
     return file_path

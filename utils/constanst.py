@@ -7,6 +7,8 @@ def load_config(config_path="config/config.json"):
 
 config = load_config()
 
+
+#credentials
 API_URL = config['github']['api_url']
 OUTPUT_LOGS = config['output_logs']
 OUTPUT_USERS = config['output_users']

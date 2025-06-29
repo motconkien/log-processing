@@ -3,6 +3,7 @@ import boto3
 from botocore.exceptions import ClientError
 import sys 
 
+#ETL of AWS 
 def connect_to_s3():
     try:
         s3 = boto3.client(
