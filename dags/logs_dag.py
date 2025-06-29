@@ -7,6 +7,7 @@ sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipelines.log_pipeline import log_pipeline
 from pipelines.users_pipeline import user_pipeline
+from pipelines.aws_pipeline import aws_pipeline
 default_args = {
     "owner":"Hoang",
     "start_date": datetime(year=2025, month=6, day=28)
@@ -39,5 +40,11 @@ with DAG(
         }
     )
 
+    #upload s3
+    upload_s3 = PythonOperator(
+        task_id = 'load_s3',
+        python_callable = aws_pipeline
+    )
 
-    extract >> enrich_users
+
+    extract >> enrich_users >> upload_s3

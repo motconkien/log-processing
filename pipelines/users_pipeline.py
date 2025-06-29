@@ -1,6 +1,7 @@
 from etls.users_etls import *
 import os
 from utils.constanst import OUTPUT_USERS
+from datetime import datetime
 
 
 def user_pipeline(ti, user_file):
@@ -16,4 +17,8 @@ def user_pipeline(ti, user_file):
     file_path = f"{OUTPUT_USERS}/{user_file}.csv"
     new_user_data = get_user_info(new_user_urls,file_path)
     print(f"[INFO] Enriched {len(new_user_data)} users.")
-
+    
+    if new_user_data is not None and not new_user_data.empty:
+        tmp_path = f"/tmp/new_users_{datetime.now().strftime('%Y%m%d')}.csv"
+        new_user_data.to_csv(tmp_path, index=False)
+        ti.xcom_push(key='new_user_file', value=tmp_path)
