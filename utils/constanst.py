@@ -7,7 +7,9 @@ def load_config(config_path="config/config.json"):
 
 config = load_config()
 
-API_URL = config['api_url']
-OUTPUT_PATH = config['output_path']
-HEADERS = config['headers']
+API_URL = config['github']['api_url']
+OUTPUT_LOGS = config['output_logs']
+OUTPUT_USERS = config['output_users']
+HEADERS = config['github']['headers']
 FETCH_INTERVAL = config.get('fetch_interval_sec', 60)
+TOKEN = config['github']['token']

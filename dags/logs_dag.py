@@ -6,12 +6,14 @@ import sys
 sys.path.insert(0,os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from pipelines.log_pipeline import log_pipeline
+from pipelines.users_pipeline import user_pipeline
 default_args = {
     "owner":"Hoang",
     "start_date": datetime(year=2025, month=6, day=28)
 }
 
 file_postfix = datetime.now().strftime("%Y%m%d")
+
 
 with DAG(
     dag_id='etl_log_processing',
@@ -24,8 +26,18 @@ with DAG(
         task_id = 'log_extraction', 
         python_callable = log_pipeline,
         op_kwargs = {
-            'filename': f"{file_postfix}_log"
+            'filename': f'log_{file_postfix}'
         }
     )
 
-    extract
+    #enrich users coming 
+    enrich_users = PythonOperator(
+        task_id = 'enrich_user',
+        python_callable = user_pipeline,
+        op_kwargs = {
+            'user_file': 'users'
+        }
+    )
+
+
+    extract >> enrich_users

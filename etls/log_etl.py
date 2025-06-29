@@ -24,13 +24,15 @@ def fetch_data(events):
     global last_event_id
 
     new_events = []
+    user_urls = set()
     for event in events:
         if last_event_id is None or int(event['id']) > int(last_event_id):
             base = {
                 "event_id": event['id'],
                 "event_type": event["type"],
                 "created_at": event['created_at'],
-                "actor": event['actor']['display_login'],
+                "actor": event['actor']['login'],
+                'url':event['actor']['url'],
                 "repo":event['repo']['name']
             }
 
@@ -48,6 +50,9 @@ def fetch_data(events):
                 row["commit_sha"] = None
                 row["commit_message"] = None
                 new_events.append(row)
+
+            #for user 
+            user_urls.add(event['actor']['url'])
 
         else:
             break 
