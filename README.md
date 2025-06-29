@@ -28,18 +28,16 @@ GitHub-logs-processing/
 
 ## 🚀 Features
 
-- 🔁 Automatically fetch GitHub event logs using the GitHub API
+- 🔁 Automatically fetch GitHub event logs using the GitHub API daily
 - 🧹 Clean and structure logs for storage
 - 🛢 Upload logs to:
   - Local storage (for audit/debugging)
-  - PostgreSQL database
   - Amazon S3
 - ⛓️ Orchestrated by Apache Airflow
 - 🧪 Ready for extension to Amazon Redshift
 
 ## 🛠 Setup Instructions
 
-### 1. Clone the Repository
 ```bash
 git clone https://github.com/your-username/github-logs-processing.git
 cd github-logs-processing
