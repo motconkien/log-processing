@@ -37,7 +37,7 @@ GitHub-logs-processing/
   - Local storage (for audit/debugging)
   - Amazon S3
 - ⛓️ Orchestrated by Apache Airflow
-- 🧪 Ready for extension to Amazon Redshift
+- 🧪 Use AWS Glue to ETL again then transferting to Amazon Redshift and Amazon Athena
 
 ## 🛠 Setup Instructions
 
