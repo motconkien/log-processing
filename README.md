@@ -1,5 +1,4 @@
 # GitHub Logs Processing Pipeline
-![Pipeline Architecture](https://drive.google.com/file/d/1AgWepLxou1keuVm4AVkmIVg27lfereIu/view?usp=share_link)
 ![Pipeline Architecture](https://drive.google.com/uc?export=view&id=1AgWepLxou1keuVm4AVkmIVg27lfereIu)
 
 
