@@ -1,5 +1,5 @@
 # GitHub Logs Processing Pipeline
-![Pipeline Architecture](/Users/huyenhoang/Documents/Side_projects/github-logs-processing/img/pipeline_architecture.png)
+![Pipeline Architecture](https://drive.google.com/file/d/1AgWepLxou1keuVm4AVkmIVg27lfereIu/view?usp=share_link)
 
 
 This project is an end-to-end data pipeline that retrieves public event logs from the GitHub API, stores them in local files, uploads to AWS S3 and transfer to Redshift, can be quired by Athena or Redshift
