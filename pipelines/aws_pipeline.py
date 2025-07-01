@@ -9,8 +9,8 @@ def aws_pipeline(ti):
 
     s3 = connect_to_s3()
     create_bucket(s3)
-    s3_key_log = f"logs/{os.path.basename(file_log)}"
-    s3_key_user = f"users/{today}_user.csv"
+    s3_key_log = f"raw/logs/{os.path.basename(file_log)}"
+    s3_key_user = f"raw/users/{today}_user.csv"
 
     if not os.path.exists(file_log):
         raise FileNotFoundError(f"There is no file {file_log}")

@@ -68,6 +68,7 @@ def transform_data(new_events):
     df = pd.DataFrame(new_events)
     df['created_at'] = pd.to_datetime(df['created_at'])
     df['event_id'] = df['event_id'].astype(int)
+    df.fillna("N/A", inplace=True)
     return df 
 
 def load_file(df, file_path):
